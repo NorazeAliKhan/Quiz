@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyForge — Product Info &amp; Technical Specifications</title>
+  
+  <!-- Google Fonts: Space Grotesk (Headings), Inter (Body), JetBrains Mono (Specs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Shared External Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. GLOBAL NAVIGATION HEADER
+       Shared across all pages, with Info link active
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container navbar">
+      
+      <!-- Brand Logo & Spec Version Tag -->
+      <a href="index.html" class="brand-logo" aria-label="KeyForge Home">
+        <img src="images/logo.png" alt="KeyForge Emblem Logo" class="logo-img">
+        <span class="brand-name">KeyForge</span>
+        <span class="badge-pill badge-cyan">PROTOTYPE v2.4</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links-wrap" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="info.html" class="nav-link active" aria-current="page">Info</a>
+        <a href="order.html" class="nav-link">Order</a>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm header-cta-btn">Order Now</a>
+        
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="icon">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="index.html" class="mobile-nav-link">
+        <span>Home</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="info.html" class="mobile-nav-link active">
+        <span>Product Info &amp; Specs</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="order.html" class="mobile-nav-link">
+        <span>Order Configurator</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="order.html" class="btn btn-primary btn-lg">Order Now</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA: PRODUCT INFO & SPECS
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- PAGE HEADER SECTION -->
+    <section class="page-header-section section-py">
+      <div class="container">
+        <div class="page-header-content">
+          <div class="badge-pill badge-cyan">
+            <span class="pulse-dot"></span>
+            <span>Acoustic Architecture &amp; Specs // EDITION 2025</span>
+          </div>
+          <h1 class="font-display">About Our Keyboards</h1>
+          <p class="page-header-desc">
+            Mastery in every layer — discover our acoustic engineering, custom switches, form factors, and technical specifications designed for absolute tactile supremacy.
+          </p>
+
+          <!-- Technical Telemetry Micro-Bar -->
+          <div class="telemetry-bar">
+            <div class="telemetry-item">
+              <span class="telemetry-label">Actuation Tolerance</span>
+              <span class="telemetry-value">±0.02 mm</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Case Density</span>
+              <span class="telemetry-value cyan">6063 Aluminum</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Sound Profile</span>
+              <span class="telemetry-value violet">Deep Thock</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Firmware Latency</span>
+              <span class="telemetry-value">0.125 ms (8kHz)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILED SWITCH GUIDE SECTION -->
+    <section class="info-section section-py section-border-top bg-surface-lowest" id="switch-guide">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="font-mono-spec" style="color: var(--color-primary-dim);">Electro-Mechanical Actuators</span>
+          <h2 class="font-headline-xl">Switch Guide</h2>
+          <p>Understand internal switch dynamics before selecting your ideal tactile feel.</p>
+        </div>
+
+        <div class="switches-grid">
+
+          <!-- Red Switch Details -->
+          <article class="switch-card card-red">
+            <div class="switch-card-header">
+              <div class="switch-header-left">
+                <div class="switch-icon-box">
+                  <span class="icon">keyboard</span>
+                </div>
+                <div class="switch-name-group">
+                  <h3 class="switch-name">Linear (Red)</h3>
+                  <span class="switch-feel-label">KF-RED v3 // Linear</span>
+                </div>
+              </div>
+              <span class="switch-tag">45g SILENT</span>
+            </div>
+
+            <!-- Switch Photo Preview -->
+            <div class="switch-preview-thumb">
+              <img src="images/switch-red.jpg" alt="KeyForge Linear Red Switch" class="switch-thumb-img">
+            </div>
+
+            <!-- Force Curve Chart -->
+            <div class="curve-box">
+              <div class="curve-legend">
+                <span>Force Profile</span>
+                <span style="color: var(--switch-red);">Linear Slope</span>
+              </div>
+              <svg class="curve-svg" viewBox="0 0 200 45" fill="none">
+                <path d="M 0 40 L 40 32 L 80 24 L 120 16 L 160 8 L 200 2" stroke="var(--switch-red)" stroke-width="2.5" stroke-linecap="round"></path>
+                <circle cx="80" cy="24" r="3.5" fill="var(--switch-red)"></circle>
+              </svg>
+              <div class="curve-axis">
+                <span>0mm</span>
+                <span>2.0mm (Actuation)</span>
+                <span>4.0mm</span>
+              </div>
+            </div>
+
+            <div class="switch-detail-rows">
+              <div class="detail-row">
+                <span class="detail-label">Tactile Feel:</span>
+                <span class="detail-text">Silky smooth downward travel with uniform resistance and zero interruption bump.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Sound Signature:</span>
+                <span class="detail-text">Muted, whisper-quiet deep acoustic thock.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Recommended For:</span>
+                <span class="detail-text">Rapid twitch gaming, competitive FPS, and shared office environments.</span>
+              </div>
+            </div>
+
+            <div class="switch-metrics-row">
+              <div class="metric-col">
+                <span class="metric-label">Operating Force</span>
+                <span class="metric-val">45 gf</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-label">Actuation / Travel</span>
+                <span class="metric-val">2.0 / 4.0 mm</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blue Switch Details -->
+          <article class="switch-card card-blue">
+            <div class="switch-card-header">
+              <div class="switch-header-left">
+                <div class="switch-icon-box">
+                  <span class="icon">volume_up</span>
+                </div>
+                <div class="switch-name-group">
+                  <h3 class="switch-name">Clicky (Blue)</h3>
+                  <span class="switch-feel-label">KF-BLUE v2 // Clicky</span>
+                </div>
+              </div>
+              <span class="switch-tag">50g AUDITORY</span>
+            </div>
+
+            <!-- Switch Photo Preview -->
+            <div class="switch-preview-thumb">
+              <img src="images/switch-blue.jpg" alt="KeyForge Clicky Blue Switch" class="switch-thumb-img">
+            </div>
+
+            <!-- Force Curve Chart -->
+            <div class="curve-box">
+              <div class="curve-legend">
+                <span>Force Profile</span>
+                <span style="color: var(--switch-blue);">Sharp Snap</span>
+              </div>
+              <svg class="curve-svg" viewBox="0 0 200 45" fill="none">
+                <path d="M 0 40 L 40 35 L 75 14 L 88 28 L 130 18 L 170 8 L 200 2" stroke="var(--switch-blue)" stroke-width="2.5" stroke-linecap="round"></path>
+                <circle cx="75" cy="14" r="3.5" fill="var(--switch-blue)"></circle>
+              </svg>
+              <div class="curve-axis">
+                <span>0mm</span>
+                <span>2.2mm (Click Point)</span>
+                <span>4.0mm</span>
+              </div>
+            </div>
+
+            <div class="switch-detail-rows">
+              <div class="detail-row">
+                <span class="detail-label">Tactile Feel:</span>
+                <span class="detail-text">Crisp mechanical resistance bump accompanied by an instant auditory affirmation.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Sound Signature:</span>
+                <span class="detail-text">Bright, energetic, high-pitched typewriter-like click.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Recommended For:</span>
+                <span class="detail-text">Dedicated touch typists, novelists, and programmers who crave unmistakable keystroke confirmation.</span>
+              </div>
+            </div>
+
+            <div class="switch-metrics-row">
+              <div class="metric-col">
+                <span class="metric-label">Operating Force</span>
+                <span class="metric-val">50 gf</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-label">Actuation / Travel</span>
+                <span class="metric-val">2.2 / 4.0 mm</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Brown Switch Details -->
+          <article class="switch-card card-brown">
+            <div class="switch-card-header">
+              <div class="switch-header-left">
+                <div class="switch-icon-box">
+                  <span class="icon">touch_app</span>
+                </div>
+                <div class="switch-name-group">
+                  <h3 class="switch-name">Tactile (Brown)</h3>
+                  <span class="switch-feel-label">KF-BROWN v4 // Tactile</span>
+                </div>
+              </div>
+              <span class="switch-tag">55g HYBRID</span>
+            </div>
+
+            <!-- Switch Photo Preview -->
+            <div class="switch-preview-thumb">
+              <img src="images/switch-brown.jpg" alt="KeyForge Tactile Brown Switch" class="switch-thumb-img">
+            </div>
+
+            <!-- Force Curve Chart -->
+            <div class="curve-box">
+              <div class="curve-legend">
+                <span>Force Profile</span>
+                <span style="color: var(--switch-brown);">Gentle Bump</span>
+              </div>
+              <svg class="curve-svg" viewBox="0 0 200 45" fill="none">
+                <path d="M 0 40 L 40 33 L 70 18 Q 80 25 90 22 L 140 14 L 180 8 L 200 2" stroke="var(--switch-brown)" stroke-width="2.5" stroke-linecap="round"></path>
+                <circle cx="70" cy="18" r="3.5" fill="var(--switch-brown)"></circle>
+              </svg>
+              <div class="curve-axis">
+                <span>0mm</span>
+                <span>2.0mm (Peak)</span>
+                <span>4.0mm</span>
+              </div>
+            </div>
+
+            <div class="switch-detail-rows">
+              <div class="detail-row">
+                <span class="detail-label">Tactile Feel:</span>
+                <span class="detail-text">Soft, rounded tactile crest that lets your fingertips know a key has triggered without extra noise.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Sound Signature:</span>
+                <span class="detail-text">Deep, clean acoustic resonance with subdued bottom-out tone.</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Recommended For:</span>
+                <span class="detail-text">Software engineering marathons, hybrid gaming, and versatile everyday computing.</span>
+              </div>
+            </div>
+
+            <div class="switch-metrics-row">
+              <div class="metric-col">
+                <span class="metric-label">Operating Force</span>
+                <span class="metric-val">55 gf</span>
+              </div>
+              <div class="metric-col">
+                <span class="metric-label">Actuation / Travel</span>
+                <span class="metric-val">2.0 / 4.0 mm</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM FACTOR COMPARISON CARDS -->
+    <section class="info-section section-py section-border-top bg-surface" id="form-factors">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="font-mono-spec" style="color: var(--color-secondary);">Ergonomic Geometry</span>
+          <h2 class="font-headline-xl">Keyboard Form Factors</h2>
+          <p>Choose the chassis footprint calibrated for your workstation ergonomics and desk space.</p>
+        </div>
+
+        <div class="form-factors-grid">
+          
+          <!-- 60% Form Factor -->
+          <div class="form-factor-card">
+            <div class="factor-header">
+              <span class="badge-pill">60% COMPACT</span>
+              <span class="factor-keys font-mono-spec">61 KEYS</span>
+            </div>
+            <h3 class="factor-title">60% Ultra-Compact</h3>
+            <p class="factor-desc">
+              Strips away the numeric keypad, navigation cluster, and function row for maximum desk real estate and unrestricted mouse travel.
+            </p>
+            <ul class="factor-specs-list">
+              <li><strong>Dimensions:</strong> 292 x 102 x 38 mm</li>
+              <li><strong>Desk Space:</strong> 60% of standard board</li>
+              <li><strong>Key Features:</strong> Layered FN commands, ultra-portable</li>
+            </ul>
+          </div>
+
+          <!-- 75% Form Factor -->
+          <div class="form-factor-card highlight-card">
+            <div class="factor-header">
+              <span class="badge-pill badge-violet">75% PRO (POPULAR)</span>
+              <span class="factor-keys font-mono-spec">82 KEYS + KNOB</span>
+            </div>
+            <h3 class="factor-title">75% Balanced Pro</h3>
+            <p class="factor-desc">
+              The enthusiast favorite. Keeps dedicated arrow keys, vertical navigation buttons, and an analog aluminum volume knob in a tightly packed frame.
+            </p>
+            <ul class="factor-specs-list">
+              <li><strong>Dimensions:</strong> 325 x 138 x 40 mm</li>
+              <li><strong>Desk Space:</strong> 75% of standard board</li>
+              <li><strong>Key Features:</strong> Rotary media knob, full F-row access</li>
+            </ul>
+          </div>
+
+          <!-- TKL Form Factor -->
+          <div class="form-factor-card">
+            <div class="factor-header">
+              <span class="badge-pill badge-cyan">TKL ESPORTS</span>
+              <span class="factor-keys font-mono-spec">87 KEYS</span>
+            </div>
+            <h3 class="factor-title">Tenkeyless (87-Key)</h3>
+            <p class="factor-desc">
+              Standard typing layout without the numeric keypad. Balances familiar key spacing with improved ergonomic shoulder positioning for gaming.
+            </p>
+            <ul class="factor-specs-list">
+              <li><strong>Dimensions:</strong> 358 x 138 x 40 mm</li>
+              <li><strong>Desk Space:</strong> 80% of standard board</li>
+              <li><strong>Key Features:</strong> Full navigation cluster, rapid trigger option</li>
+            </ul>
+          </div>
+
+          <!-- Full Size Form Factor -->
+          <div class="form-factor-card">
+            <div class="factor-header">
+              <span class="badge-pill">FULL SIZE</span>
+              <span class="factor-keys font-mono-spec">104 KEYS</span>
+            </div>
+            <h3 class="factor-title">Full-Size Master</h3>
+            <p class="factor-desc">
+              Complete professional workstation layout with integrated 10-key numeric pad. Engineered for high-speed financial calculation and macro binds.
+            </p>
+            <ul class="factor-specs-list">
+              <li><strong>Dimensions:</strong> 440 x 138 x 40 mm</li>
+              <li><strong>Desk Space:</strong> 100% full footprint</li>
+              <li><strong>Key Features:</strong> Dedicated numpad, extensive macro layer support</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL TECHNICAL SPECIFICATIONS MATRIX TABLE -->
+    <section class="info-section section-py section-border-top bg-surface-lowest" id="spec-matrix">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="font-mono-spec" style="color: var(--color-primary-dim);">Hardware Telemetry</span>
+          <h2 class="font-headline-xl">Comprehensive Technical Specifications</h2>
+          <p>Direct side-by-side comparison of build materials, firmware performance, and internal acoustics.</p>
+        </div>
+
+        <div class="table-responsive-wrap">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col">KeyForge 60 Compact</th>
+                <th scope="col" class="highlight-col">KeyForge 75 Pro</th>
+                <th scope="col">KeyForge TKL Elite</th>
+                <th scope="col">KeyForge Full-Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="spec-label">Chassis Construction</td>
+                <td>CNC 6063 Aluminum Alloy</td>
+                <td class="highlight-col">CNC 6063 Aluminum Alloy</td>
+                <td>CNC Aluminum + Carbon Plate</td>
+                <td>CNC 6063 Aluminum Alloy</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Mounting Architecture</td>
+                <td>Silicone Tray Dampened</td>
+                <td class="highlight-col">Poron 5-Stage Gasket Mount</td>
+                <td>Gasket Mount + Carbon Switch Plate</td>
+                <td>Dual-Stage Gasket Mount</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Polling Rate &amp; Latency</td>
+                <td>1000Hz (1.0ms)</td>
+                <td class="highlight-col">1000Hz Tri-Mode / 0.8ms</td>
+                <td>8000Hz Wired (0.125ms)</td>
+                <td>1000Hz (1.0ms)</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Connectivity Modes</td>
+                <td>USB-C Wired, 2.4GHz, BT 5.2</td>
+                <td class="highlight-col">USB-C Wired, 2.4GHz, BT 5.2</td>
+                <td>USB-C Detachable Braided</td>
+                <td>USB-C Wired, 2.4GHz, BT 5.2</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Battery Capacity</td>
+                <td>3000 mAh (up to 160 hrs)</td>
+                <td class="highlight-col">5000 mAh (up to 240 hrs)</td>
+                <td>Ultra-low latency wired bus</td>
+                <td>6000 mAh (up to 300 hrs)</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Acoustic Dampening</td>
+                <td>EVA Case Foam + IXPE Sheet</td>
+                <td class="highlight-col">Poron Foam + IXPE + PET Film</td>
+                <td>Poron Foam + Sound-Absorbing Pad</td>
+                <td>Dual Poron Dampening Matrix</td>
+              </tr>
+              <tr>
+                <td class="spec-label">PCB &amp; Sockets</td>
+                <td>5-Pin Kailh Hot-Swap</td>
+                <td class="highlight-col">5-Pin Kailh Hot-Swap (Per-Key RGB)</td>
+                <td>Hall-Effect Magnetic / 5-Pin Hot-Swap</td>
+                <td>5-Pin Kailh Hot-Swap</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Firmware Support</td>
+                <td>QMK / VIA Remappable</td>
+                <td class="highlight-col">QMK / VIA Web Configurator</td>
+                <td>Rapid Trigger Firmware + VIA</td>
+                <td>QMK / VIA Remappable</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Chassis Weight</td>
+                <td>820g</td>
+                <td class="highlight-col">1,250g</td>
+                <td>1,480g</td>
+                <td>1,850g</td>
+              </tr>
+              <tr class="price-row">
+                <td class="spec-label">Base Price</td>
+                <td class="table-price">$149.00</td>
+                <td class="table-price highlight-col" style="color: var(--color-primary-dim);">$189.00</td>
+                <td class="table-price" style="color: var(--color-secondary);">$219.00</td>
+                <td class="table-price">$239.00</td>
+              </tr>
+              <tr class="action-row">
+                <td class="spec-label">Configuration</td>
+                <td><a href="order.html" class="btn btn-secondary btn-sm">Select 60%</a></td>
+                <td class="highlight-col"><a href="order.html" class="btn btn-primary btn-sm">Configure 75</a></td>
+                <td><a href="order.html" class="btn btn-secondary btn-sm">Select TKL</a></td>
+                <td><a href="order.html" class="btn btn-secondary btn-sm">Select Full</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUR STORY & CRAFTSMANSHIP SECTION -->
+    <section class="info-section section-py section-border-top bg-surface" id="our-story">
+      <div class="container">
+        <div class="story-grid">
+          
+          <!-- Workshop Visual Panel -->
+          <div class="story-img-panel">
+            <div class="story-img-frame">
+              <img src="images/our-story.jpg" alt="KeyForge artisan craftsmanship workshop assembling a custom CNC aluminum mechanical keyboard">
+              <div class="story-floating-tag">
+                <div class="tag-left">
+                  <span class="pulse-dot"></span>
+                  <span class="font-mono-spec">CRAFT ARCHIVE // LAB UNIT 04</span>
+                </div>
+                <span class="tag-right font-mono-spec">TOLERANCE 0.01mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Column -->
+          <div class="story-content">
+            <div class="badge-pill badge-cyan">
+              <span class="icon">verified</span>
+              <span>Our Heritage &amp; Philosophy</span>
+            </div>
+            
+            <h2 class="font-headline-xl">Born from the Pursuit of the Ultimate Acoustic Thock</h2>
+            
+            <p class="story-body">
+              Founded in 2021 by a team of mechanical engineers and software developers dissatisfied with hollow plastic mainstream keyboards, KeyForge was created to treat mechanical keyboards as heirloom desktop instruments.
+            </p>
+            
+            <p class="story-body">
+              Every board is crafted from solid aircraft-grade 6063 aluminum, precision CNC-machined over 4 hours, and hand-finished with anodized micro-bead blasting. We damp each unit with five acoustic Poron gasket layers and hand-lubricate every switch with authentic Krytox 205g0.
+            </p>
+
+            <!-- 3 Value Pillars -->
+            <div class="story-pillars">
+              <div class="pillar-box">
+                <span class="pillar-val cyan">6063</span>
+                <span class="pillar-title">Aircraft Alloy</span>
+                <span class="pillar-desc">CNC milled chassis</span>
+              </div>
+              <div class="pillar-box">
+                <span class="pillar-val violet">Poron™</span>
+                <span class="pillar-title">5-Stage Gaskets</span>
+                <span class="pillar-desc">Isolates resonance</span>
+              </div>
+              <div class="pillar-box">
+                <span class="pillar-val cyan">Krytox</span>
+                <span class="pillar-title">Hand-Lubed</span>
+                <span class="pillar-desc">205g0 + GPL 105</span>
+              </div>
+            </div>
+
+            <div class="story-cta-wrap">
+              <a href="order.html" class="btn btn-secondary">
+                <span>Explore Custom Configurator</span>
+                <span class="icon">arrow_forward</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) SECTION -->
+    <section class="info-section section-py section-border-top bg-surface-lowest" id="faq">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="badge-pill badge-violet">
+            <span class="icon">help</span>
+            <span>Inquiries &amp; Technical Support</span>
+          </div>
+          <h2 class="font-headline-xl">Frequently Asked Questions</h2>
+          <p>Everything you need to know about compatibility, shipping, hardware switches, and warranty coverage.</p>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="faq-accordion-container" id="faq-accordion">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-desc-1" id="faq-btn-1">
+              <span class="faq-question">
+                <span class="faq-index font-mono-spec">01</span>
+                <span>Are KeyForge keyboards truly hot-swappable?</span>
+              </span>
+              <span class="icon faq-icon">expand_more</span>
+            </button>
+            <div class="faq-content" id="faq-desc-1" role="region" aria-labelledby="faq-btn-1">
+              <p>Yes. Every KeyForge chassis features premium 5-pin Kailh hot-swap sockets rated for over 10,000 insertion cycles. You can swap switches seamlessly in minutes without desoldering, supporting full compatibility with Cherry MX, Gateron, Kailh, Outemu, and boutique artisan mechanical switches.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-desc-2" id="faq-btn-2">
+              <span class="faq-question">
+                <span class="faq-index font-mono-spec">02</span>
+                <span>Does KeyForge support both macOS and Windows?</span>
+              </span>
+              <span class="icon faq-icon">expand_more</span>
+            </button>
+            <div class="faq-content" id="faq-desc-2" role="region" aria-labelledby="faq-btn-2">
+              <p>Yes, completely. A recessed physical hardware toggle switch on the rear frame toggles between macOS and Windows layouts instantly. We include interchangeable Mac command/option and Windows keycaps in the packaging. Full VIA/QMK web-based remapping allows custom layer configuration across macOS, Windows, and Linux.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-desc-3" id="faq-btn-3">
+              <span class="faq-question">
+                <span class="faq-index font-mono-spec">03</span>
+                <span>What is your standard shipping delivery time?</span>
+              </span>
+              <span class="icon faq-icon">expand_more</span>
+            </button>
+            <div class="faq-content" id="faq-desc-3" role="region" aria-labelledby="faq-btn-3">
+              <p>Orders are calibrated, hand-inspected, and dispatched within 24 hours of confirmation. Express global air shipping delivers within 3–5 business days, including full door-to-door tracking and protective shockproof air-cushion packaging.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-desc-4" id="faq-btn-4">
+              <span class="faq-question">
+                <span class="faq-index font-mono-spec">04</span>
+                <span>What does the 2-year warranty cover?</span>
+              </span>
+              <span class="icon faq-icon">expand_more</span>
+            </button>
+            <div class="faq-content" id="faq-desc-4" role="region" aria-labelledby="faq-btn-4">
+              <p>Our comprehensive 2-year warranty covers all hardware components including the hot-swap PCB, individual per-key switch contacts, RGB LED emitters, internal wireless transmitters, and lithium-ion battery. We provide free replacement modules or a complete replacement unit at zero cost.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-desc-5" id="faq-btn-5">
+              <span class="faq-question">
+                <span class="faq-index font-mono-spec">05</span>
+                <span>What is your return policy?</span>
+              </span>
+              <span class="icon faq-icon">expand_more</span>
+            </button>
+            <div class="faq-content" id="faq-desc-5" role="region" aria-labelledby="faq-btn-5">
+              <p>We provide a 30-day risk-free in-home typing trial. If the acoustic profile, tactile feedback, or chassis layout doesn't fit your daily ritual, return it for a 100% full refund with complimentary prepaid return shipping labels provided.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contact Support CTA Card -->
+        <div class="faq-contact-box">
+          <div class="faq-contact-text">
+            <h4 class="font-headline-sm">Have a custom firmware or bulk build inquiry?</h4>
+            <p>Our mechanical engineering team is available 24/7 for enthusiast advice.</p>
+          </div>
+          <a href="mailto:support@keyforge.tech" class="btn btn-secondary">
+            <span class="icon">mail</span>
+            <span>Contact Engineering</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. GLOBAL FOOTER
+       Identical on all pages
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Top Row: Brand & Engineering Support -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <span class="brand-name">KeyForge</span>
+            <span class="badge-pill badge-cyan">LABS</span>
+          </div>
+          <p class="footer-desc">
+            KeyForge — Precision engineered mechanical keyboards crafted for enthusiasts, coders, and competitive gamers.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <span class="contact-label">Tactile Engineering Support</span>
+          <a href="mailto:support@keyforge.tech" class="contact-email">support@keyforge.tech</a>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Copyright & Social / Tech Links -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 KeyForge Inc. All rights reserved.</p>
+
+        <div class="footer-social-links">
+          <a href="#" class="social-link" aria-label="Discord Community">
+            <span class="icon">forum</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Source Firmware">
+            <span class="icon">terminal</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Broadcast Stream">
+            <span class="icon">podcasts</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Acoustic Demos">
+            <span class="icon">smart_display</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Photo Gallery">
+            <span class="icon">photo_camera</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Shared External Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
