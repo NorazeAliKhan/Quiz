@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyForge — Custom Hardware Foundry &amp; Order Configurator</title>
+  
+  <!-- Google Fonts: Space Grotesk (Headings), Inter (Body), JetBrains Mono (Specs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Shared External Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. GLOBAL NAVIGATION HEADER
+       Shared across all pages, with Order link active
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container navbar">
+      
+      <!-- Brand Logo & Spec Version Tag -->
+      <a href="index.html" class="brand-logo" aria-label="KeyForge Home">
+        <img src="images/logo.png" alt="KeyForge Emblem Logo" class="logo-img">
+        <span class="brand-name">KeyForge</span>
+        <span class="badge-pill badge-cyan">PROTOTYPE v2.4</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links-wrap" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="info.html" class="nav-link">Info</a>
+        <a href="order.html" class="nav-link active" aria-current="page">Order</a>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm header-cta-btn">Order Now</a>
+        
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="icon">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="index.html" class="mobile-nav-link">
+        <span>Home</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="info.html" class="mobile-nav-link">
+        <span>Product Info &amp; Specs</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="order.html" class="mobile-nav-link active">
+        <span>Order Configurator</span>
+        <span class="icon">arrow_forward</span>
+      </a>
+      <a href="order.html" class="btn btn-primary btn-lg">Order Now</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT AREA: ORDER CONFIGURATOR
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="order-header-section section-py">
+      <div class="container">
+        <div class="page-header-content">
+          <div class="badge-pill badge-cyan">
+            <span class="pulse-dot"></span>
+            <span>Custom Hardware Foundry // Slot 08-B</span>
+          </div>
+          <h1 class="font-display">Build &amp; Order Your Keyboard</h1>
+          <p class="page-header-desc">
+            Configure your custom mechanical build, preview hardware specifications in real-time, and submit your foundry order.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIGURATION & ORDER STAGE -->
+    <section class="order-main-section section-border-top pb-space-xl">
+      <div class="container">
+
+        <!-- Two-Column Grid: Form (65%) & Sticky Summary (35%) -->
+        <div class="order-layout-grid">
+
+          <!-- LEFT COLUMN: Customization & Customer Form -->
+          <div class="order-form-column">
+            
+            <!-- Global Form Error Alert (Hidden by default) -->
+            <div class="error-alert" id="form-error-msg" role="alert" aria-live="polite">
+              <span class="icon">error</span>
+              <span class="error-text" id="form-error-text">Please resolve the highlighted errors before submitting.</span>
+            </div>
+
+            <!-- Global Form Success Confirmation Card (Hidden by default) -->
+            <div class="success-card" id="order-success-msg" role="region" aria-live="polite">
+              <div class="success-header">
+                <span class="icon success-icon">check_circle</span>
+                <div class="success-title-group">
+                  <h3 class="font-headline-sm">Foundry Work Order Secured!</h3>
+                  <span class="font-mono-spec cyan" id="order-id-badge">ORDER #KF-2025-0000</span>
+                </div>
+              </div>
+              <p class="success-intro" id="success-buyer-greeting">
+                Thank you! Your custom keyboard specification has been transmitted to our workshop.
+              </p>
+              <div class="success-receipt-box">
+                <div class="receipt-row">
+                  <span>Configured Model:</span>
+                  <strong id="receipt-model">-</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Mechanical Switches:</span>
+                  <strong id="receipt-switch">-</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Layout &amp; Keycaps:</span>
+                  <strong id="receipt-layout">-</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Total Investment:</span>
+                  <strong class="receipt-total" id="receipt-price">-</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Delivery Address:</span>
+                  <strong id="receipt-shipping">-</strong>
+                </div>
+              </div>
+              <p class="success-foot">
+                A confirmation dispatch receipt has been emailed to <strong id="receipt-email">-</strong>. Your unit will enter CNC calibrating within 24 hours.
+              </p>
+            </div>
+
+            <!-- Main Interactive Form -->
+            <form id="keyboard-order-form" novalidate>
+
+              <!-- MODULE 1: HARDWARE ARCHITECTURE -->
+              <fieldset class="order-module">
+                <legend class="module-legend">
+                  <span class="icon">tune</span>
+                  <span>1. Chassis &amp; Mechanical Architecture</span>
+                </legend>
+
+                <div class="form-row form-cols-2">
+                  <!-- Model Selection -->
+                  <div class="form-group">
+                    <label for="keyboard-model" class="form-label">
+                      <span>Chassis Model</span>
+                      <span class="font-mono-spec" style="color: var(--color-primary-dim);">CNC 6063 Aluminum</span>
+                    </label>
+                    <select id="keyboard-model" class="form-select">
+                      <option value="149" data-name="KeyForge 60 Compact" data-layout="60" data-img="images/keyboard-60.jpg">KeyForge 60 Compact ($149.00)</option>
+                      <option value="189" data-name="KeyForge 75 Pro" data-layout="75" data-img="images/keyboard-75.jpg" selected>KeyForge 75 Pro ($189.00)</option>
+                      <option value="219" data-name="KeyForge TKL Elite" data-layout="87" data-img="images/keyboard-tkl.jpg">KeyForge TKL Elite ($219.00)</option>
+                      <option value="239" data-name="KeyForge Full-Size Master" data-layout="104" data-img="images/keyboard-75.jpg">KeyForge Full-Size Master ($239.00)</option>
+                    </select>
+                  </div>
+
+                  <!-- Layout Size -->
+                  <div class="form-group">
+                    <label for="layout-size" class="form-label">
+                      <span>Layout Profile</span>
+                      <span class="font-mono-spec" style="color: var(--color-secondary);">Rotary Encoder</span>
+                    </label>
+                    <select id="layout-size" class="form-select">
+                      <option value="60">60% Ultra-Compact (Minimalist)</option>
+                      <option value="75" selected>75% Pro (Dedicated Arrow + Knob)</option>
+                      <option value="87">TKL (87-Key Esports Tenkeyless)</option>
+                      <option value="104">Full-Size (104-Key Master Workstation)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Switch Selection Radios -->
+                <div class="form-group pt-2">
+                  <div class="form-label-row">
+                    <span class="form-label">Actuation Switches</span>
+                    <span class="font-mono-spec" style="color: var(--text-muted);">Hot-Swappable 5-Pin PCB</span>
+                  </div>
+
+                  <div class="switch-radio-grid" id="switch-selector-group">
+                    
+                    <!-- Red Switch -->
+                    <label class="switch-radio-card" for="switch-red">
+                      <input type="radio" id="switch-red" name="switch-type" value="Red Linear" data-desc="Red Linear (45g, Silent &amp; Fast)">
+                      <div class="switch-radio-top">
+                        <span class="switch-color-dot" style="background: var(--switch-red);"></span>
+                        <span class="switch-radio-name">Red</span>
+                        <span class="font-mono-spec" style="margin-left: auto;">45g</span>
+                      </div>
+                      <span class="switch-radio-feel">Linear Action</span>
+                      <span class="switch-radio-desc">Silky smooth travel, zero bump, muted acoustic profile.</span>
+                    </label>
+
+                    <!-- Blue Switch -->
+                    <label class="switch-radio-card" for="switch-blue">
+                      <input type="radio" id="switch-blue" name="switch-type" value="Blue Clicky" data-desc="Blue Clicky (50g, Tactile Snap)">
+                      <div class="switch-radio-top">
+                        <span class="switch-color-dot" style="background: var(--switch-blue);"></span>
+                        <span class="switch-radio-name">Blue</span>
+                        <span class="font-mono-spec" style="margin-left: auto;">50g</span>
+                      </div>
+                      <span class="switch-radio-feel">Clicky &amp; Tactile</span>
+                      <span class="switch-radio-desc">Crisp mechanical snap with auditory affirmation.</span>
+                    </label>
+
+                    <!-- Brown Switch (Default) -->
+                    <label class="switch-radio-card active-card" for="switch-brown">
+                      <input type="radio" id="switch-brown" name="switch-type" value="Brown Tactile" data-desc="Brown Tactile (55g, Factory Lubed)" checked>
+                      <div class="switch-radio-top">
+                        <span class="switch-color-dot" style="background: var(--switch-brown);"></span>
+                        <span class="switch-radio-name">Brown</span>
+                        <span class="font-mono-spec" style="margin-left: auto;">55g</span>
+                      </div>
+                      <span class="switch-radio-feel">Gentle Bump</span>
+                      <span class="switch-radio-desc">Subtle tactile peak, optimal for hybrid programming.</span>
+                    </label>
+
+                  </div>
+                </div>
+
+                <!-- Keycap Theme Swatches -->
+                <div class="form-group pt-2">
+                  <div class="form-label-row">
+                    <span class="form-label">Keycap Theme Profile</span>
+                    <span class="font-mono-spec" style="color: var(--color-secondary);" id="active-keycap-legend">Cyberpunk Noir PBT</span>
+                  </div>
+
+                  <div class="keycap-swatches-grid">
+                    
+                    <button type="button" class="keycap-btn active" data-keycap="Cyberpunk Noir Double-shot PBT" data-name="Cyberpunk Noir">
+                      <span class="swatch-bubble swatch-cyber"></span>
+                      <span class="keycap-text-wrap">
+                        <span class="keycap-title">Cyberpunk Noir</span>
+                        <span class="keycap-sub font-mono-spec">Violet Anodized</span>
+                      </span>
+                    </button>
+
+                    <button type="button" class="keycap-btn" data-keycap="Arctic Frost Double-shot PBT" data-name="Arctic Frost">
+                      <span class="swatch-bubble swatch-frost"></span>
+                      <span class="keycap-text-wrap">
+                        <span class="keycap-title">Arctic Frost</span>
+                        <span class="keycap-sub font-mono-spec">Cyan Highlight</span>
+                      </span>
+                    </button>
+
+                    <button type="button" class="keycap-btn" data-keycap="Stealth Matte Dye-Sub PBT" data-name="Stealth Matte">
+                      <span class="swatch-bubble swatch-stealth"></span>
+                      <span class="keycap-text-wrap">
+                        <span class="keycap-title">Stealth Matte</span>
+                        <span class="keycap-sub font-mono-spec">Obsidian Black</span>
+                      </span>
+                    </button>
+
+                    <button type="button" class="keycap-btn" data-keycap="Retro Mechanical Classic PBT" data-name="Retro Classic">
+                      <span class="swatch-bubble swatch-retro"></span>
+                      <span class="keycap-text-wrap">
+                        <span class="keycap-title">Retro Classic</span>
+                        <span class="keycap-sub font-mono-spec">Vintage Industrial</span>
+                      </span>
+                    </button>
+
+                  </div>
+                </div>
+
+                <!-- RGB Backlight Preset -->
+                <div class="form-group pt-2">
+                  <label for="backlight-mode" class="form-label">RGB Illumination Array</label>
+                  <select id="backlight-mode" class="form-select">
+                    <option value="Per-Key RGB + Underglow" selected>Per-Key RGB + Smoked Case Underglow (Included)</option>
+                    <option value="Photonic Cyan Aura">Photonic Cyan Monochromatic Aura (Included)</option>
+                    <option value="Electric Violet Pulse">Electric Violet Dynamic Pulse (Included)</option>
+                    <option value="Stealth Dark (LEDs Off)">Stealth Dark Mode (LEDs Off)</option>
+                  </select>
+                </div>
+
+              </fieldset>
+
+              <!-- MODULE 2: ORDER QUANTITY & CUSTOMER DETAILS -->
+              <fieldset class="order-module">
+                <legend class="module-legend">
+                  <span class="icon">local_shipping</span>
+                  <span>2. Quantity &amp; Shipping Information</span>
+                </legend>
+
+                <!-- Quantity Counter -->
+                <div class="form-group">
+                  <label for="qty-input" class="form-label">Production Quantity</label>
+                  <div class="qty-control-wrap">
+                    <button type="button" class="qty-btn" id="qty-decrement" aria-label="Decrease quantity">
+                      <span class="icon">remove</span>
+                    </button>
+                    <input type="number" id="qty-input" class="form-input qty-input" value="1" min="1" max="10" required>
+                    <button type="button" class="qty-btn" id="qty-increment" aria-label="Increase quantity">
+                      <span class="icon">add</span>
+                    </button>
+                    <span class="font-mono-spec" style="color: var(--text-muted); margin-left: 1rem;">Max 10 per order</span>
+                  </div>
+                </div>
+
+                <!-- Customer Name & Email -->
+                <div class="form-row form-cols-2">
+                  <div class="form-group">
+                    <label for="cust-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="cust-name" class="form-input" placeholder="e.g. Alex Chen" required>
+                    <span class="field-error" id="error-cust-name"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cust-email" class="form-label">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="cust-email" class="form-input" placeholder="e.g. alex@example.com" required>
+                    <span class="field-error" id="error-cust-email"></span>
+                  </div>
+                </div>
+
+                <!-- Phone & Street Address -->
+                <div class="form-row form-cols-2">
+                  <div class="form-group">
+                    <label for="cust-phone" class="form-label">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="cust-phone" class="form-input" placeholder="e.g. +1 555-019-2831" required>
+                    <span class="field-error" id="error-cust-phone"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cust-address" class="form-label">Street Address <span class="required-star">*</span></label>
+                    <input type="text" id="cust-address" class="form-input" placeholder="e.g. 742 Evergreen Terrace" required>
+                    <span class="field-error" id="error-cust-address"></span>
+                  </div>
+                </div>
+
+                <!-- City & Postal Code -->
+                <div class="form-row form-cols-2">
+                  <div class="form-group">
+                    <label for="cust-city" class="form-label">City <span class="required-star">*</span></label>
+                    <input type="text" id="cust-city" class="form-input" placeholder="e.g. San Francisco" required>
+                    <span class="field-error" id="error-cust-city"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cust-zip" class="form-label">Postal / ZIP Code <span class="required-star">*</span></label>
+                    <input type="text" id="cust-zip" class="form-input" placeholder="e.g. 94107" required>
+                    <span class="field-error" id="error-cust-zip"></span>
+                  </div>
+                </div>
+
+                <!-- Custom Foundry Notes -->
+                <div class="form-group">
+                  <label for="cust-notes" class="form-label">
+                    <span>Custom Weight Engraving / Special Notes</span>
+                    <span class="font-mono-spec" style="color: var(--text-dim);">Optional (Max 120 chars)</span>
+                  </label>
+                  <textarea id="cust-notes" class="form-textarea" rows="3" maxlength="120" placeholder="Specify custom rear brass weight engraving text, specific stabilizer lubing preferences, or stealth unbranded packaging requests."></textarea>
+                </div>
+
+              </fieldset>
+
+            </form>
+          </div>
+
+          <!-- RIGHT COLUMN: Sticky Live Order Summary -->
+          <aside class="order-summary-column">
+            <div class="order-summary-card">
+              
+              <!-- Card Header -->
+              <div class="summary-header">
+                <h2 class="font-headline-sm">Order Summary</h2>
+                <div class="badge-pill badge-cyan">
+                  <span class="pulse-dot"></span>
+                  <span>LIVE SYNC</span>
+                </div>
+              </div>
+
+              <!-- Mini Visual Preview Frame -->
+              <div class="summary-preview-frame">
+                <img src="images/keyboard-75.jpg" alt="Selected KeyForge Keyboard Preview" id="summary-preview-img" class="summary-preview-img">
+                <div class="preview-overlay-tag">
+                  <span class="font-mono-spec" id="preview-chip-title">KeyForge 75 Pro</span>
+                  <span class="font-mono-spec cyan">RGB ACTUATED</span>
+                </div>
+              </div>
+
+              <!-- Specification Breakdown List -->
+              <div class="summary-spec-list">
+                
+                <div class="summary-row">
+                  <span class="summary-label">Model Architecture</span>
+                  <span class="summary-value" id="sum-model-name">KeyForge 75 Pro ($189.00)</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Layout Profile</span>
+                  <span class="summary-value" id="sum-layout-name">75% Pro (Dedicated Arrow + Knob)</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Mechanical Switches</span>
+                  <span class="summary-value" id="sum-switch-name">Brown Tactile (55g, Factory Lubed)</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Keycap Profile</span>
+                  <span class="summary-value" id="sum-keycap-name">Cyberpunk Noir Double-shot PBT</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Illumination Array</span>
+                  <span class="summary-value" id="sum-backlight-name">Per-Key RGB + Underglow</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Units Configured</span>
+                  <span class="summary-value" id="sum-qty-count">1</span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Standard Express Shipping</span>
+                  <span class="summary-value font-mono-spec cyan">FREE ($0.00)</span>
+                </div>
+
+                <div class="summary-row">
+                  <span class="summary-label">Estimated Tax (8%)</span>
+                  <span class="summary-value font-mono-spec" id="sum-tax">$15.12</span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <!-- Total Investment -->
+                <div class="summary-total-row">
+                  <span class="font-headline-sm">Total Investment</span>
+                  <div class="total-price-wrap">
+                    <span class="total-price-text" id="sum-total-price">$204.12</span>
+                    <span class="font-mono-spec" style="color: var(--text-dim);">USD / Duties Included</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Primary Submit Button -->
+              <button type="button" class="btn btn-primary btn-lg submit-order-btn" id="place-order-btn">
+                <span class="icon">bolt</span>
+                <span>Place Order Now</span>
+              </button>
+
+              <!-- Trust & Security Badges -->
+              <div class="summary-trust-list">
+                <div class="trust-item">
+                  <span class="icon">lock</span>
+                  <span>256-bit SSL Secure Checkout</span>
+                </div>
+                <div class="trust-item">
+                  <span class="icon">rocket_launch</span>
+                  <span>Dispatched within 24h &bull; <strong>3-5 days delivery</strong></span>
+                </div>
+                <div class="trust-item">
+                  <span class="icon">verified_user</span>
+                  <span>2-Year Full Hardware Warranty &amp; 30-Day Return</span>
+                </div>
+              </div>
+
+              <!-- Payment Partner Logos -->
+              <div class="payment-partners-row">
+                <span class="pay-chip">VISA</span>
+                <span class="pay-chip">MASTERCARD</span>
+                <span class="pay-chip">APPLE PAY</span>
+                <span class="pay-chip">PAYPAL</span>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. GLOBAL FOOTER
+       Identical on all pages
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Top Row: Brand & Engineering Support -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <span class="brand-name">KeyForge</span>
+            <span class="badge-pill badge-cyan">LABS</span>
+          </div>
+          <p class="footer-desc">
+            KeyForge — Precision engineered mechanical keyboards crafted for enthusiasts, coders, and competitive gamers.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <span class="contact-label">Tactile Engineering Support</span>
+          <a href="mailto:support@keyforge.tech" class="contact-email">support@keyforge.tech</a>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Copyright & Social / Tech Links -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 KeyForge Inc. All rights reserved.</p>
+
+        <div class="footer-social-links">
+          <a href="#" class="social-link" aria-label="Discord Community">
+            <span class="icon">forum</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Source Firmware">
+            <span class="icon">terminal</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Broadcast Stream">
+            <span class="icon">podcasts</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Acoustic Demos">
+            <span class="icon">smart_display</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Photo Gallery">
+            <span class="icon">photo_camera</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Shared External Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
