@@ -1,0 +1,55 @@
+{
+  "description": "KeyForge Google Flow Asset Mapping",
+  "assets": [
+    {
+      "original": "Mechanical_keyboard_glowing_with.*.jpg",
+      "target": "hero.jpg",
+      "description": "Hero section showcase mechanical keyboard"
+    },
+    {
+      "original": "Mechanical_keyboard_on_dark_back.*.jpg",
+      "target": "keyboard-60.jpg",
+      "description": "KeyForge 60 Compact product card"
+    },
+    {
+      "original": "Mechanical_keyboard_with_RGB_bac.*.jpg",
+      "target": "keyboard-75.jpg",
+      "description": "KeyForge 75 Pro product card"
+    },
+    {
+      "original": "Mechanical_keyboard_with_RGB_und.*.jpg",
+      "target": "keyboard-tkl.jpg",
+      "description": "KeyForge TKL Elite product card"
+    },
+    {
+      "original": "Mechanical_keyboard_switch_on_su.*(150355).jpg",
+      "target": "switch-red.jpg",
+      "description": "Linear Red switch asset"
+    },
+    {
+      "original": "Mechanical_keyboard_switch_on_su.*(150456).jpg",
+      "target": "switch-blue.jpg",
+      "description": "Clicky Blue switch asset"
+    },
+    {
+      "original": "Mechanical_keyboard_switch_on_su.*(150735).jpg",
+      "target": "switch-brown.jpg",
+      "description": "Tactile Brown switch asset"
+    },
+    {
+      "original": "Craftsman_assembling_mechanical_.*.jpg",
+      "target": "our-story.jpg",
+      "description": "Our Story workshop craftsman visual"
+    },
+    {
+      "original": "Dark_background_with_light_trails_*.jpg",
+      "target": "cta-bg.jpg",
+      "description": "CTA banner atmospheric backdrop"
+    },
+    {
+      "original": "KeyForge_logo_icon_*.jpg",
+      "target": "logo.png",
+      "description": "KeyForge icon emblem logo"
+    }
+  ]
+}
